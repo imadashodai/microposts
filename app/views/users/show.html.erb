@@ -1,4 +1,15 @@
-<h1>
-    <%= gravatar_for @user %>
-    <%= @user.name %>
-</h1>
+<div class="show">
+    <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+    </h1>
+    <br>
+    <h2>
+        地域：
+        <%= @user.region %>
+    </h2>
+    <h2>
+        コメント：
+        <%= @user.comment %>
+    </h2>
+</div>
