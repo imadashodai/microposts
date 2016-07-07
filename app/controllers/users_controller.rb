@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:edit, :update]
+  before_action :set_user, only: [:show]
   
   def show
-    @user = User.find(params[:id])
-    @microposts = @user.microposts.order(created_at: :desc)
+    @microposts = @user.microposts.order(created_at: :desc).page(params[:page]).per(10)
   end
   
   def new
@@ -51,5 +51,9 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email, :region, :comment, :password,
                                  :password_confirmation)
+  end
+  
+  def set_user
+    @user = User.find(params[:id])
   end
 end
