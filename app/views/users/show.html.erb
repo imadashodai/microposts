@@ -8,6 +8,8 @@
         </section>
     </aside>
     <div class="col-md-8">
+        <%= link_to "followings", followings_user_path(@user) %>
+        <%= link_to "followers", followers_user_path(@user) %>
         <%= render 'follow_form' if logged_in? %>
         <% if @user.microposts.any? %>
             <h3>Microposts (<%= @user.microposts.count %>)</h3>
@@ -17,19 +19,11 @@
         <% end %>
     </div>
 </div>    
-    
-    
-    <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-    </h1>
-    <br>
-    <h2>
-        地域：
-        <%= @user.region %>
-    </h2>
-    <h2>
-        コメント：
-        <%= @user.comment %>
-    </h2>
-</div>
+<h2>
+    地域：
+    <%= @user.region %>
+</h2>
+<h2>
+    コメント：
+    <%= @user.comment %>
+</h2>
