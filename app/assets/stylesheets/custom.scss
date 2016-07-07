@@ -196,10 +196,16 @@ span.picture {
 }
 
 .clearfix {
+  padding: 0 0 ;
   text-align: left;
   font-size: 30px;
 }
 
-.users .gravatar{
-  width: 30px;
+.users {
+  padding: 0 0;
+}
+
+.users .clearfix .gravatar{
+  height: 40px;
+  width: 40px;
 }

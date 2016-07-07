@@ -8,8 +8,8 @@
         </section>
     </aside>
     <div class="col-md-8">
-        <%= link_to "followings", followings_user_path(current_user) %>
-        <%= link_to "followers", followers_user_path(current_user) %>
+        <%= link_to "followings", followings_user_path(@user) %>
+        <%= link_to "followers", followers_user_path(@user) %>
         <%= render 'follow_form' if logged_in? %>
         <% if @user.microposts.any? %>
             <h3>Microposts (<%= @user.microposts.count %>)</h3>
