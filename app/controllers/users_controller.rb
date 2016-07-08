@@ -22,7 +22,7 @@ class UsersController < ApplicationController
   
   def edit
     @user = current_user
-    logger.debug "編集"
+    #logger.debug "編集"
   end
   
   def update
